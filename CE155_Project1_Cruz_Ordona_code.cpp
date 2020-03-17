@@ -135,8 +135,8 @@ void solveRR(int n, vector<int> arrival, vector<int> burst, vector<int> prio, in
 
 algo_list hashit(string const& algo) {
   if (algo == "FCFS") return FCFS;
-  if (algo == "SJF") return SJF;
-  if (algo == "SRTF") return SRTF;
-  if (algo == "P") return P;
-  if (algo == "RR") return RR;
+  else if (algo == "SJF") return SJF;
+  else if (algo == "SRTF") return SRTF;
+  else if (algo == "P") return P;
+  else return RR;
 };
