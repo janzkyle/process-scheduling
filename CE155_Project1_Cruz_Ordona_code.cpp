@@ -1,7 +1,7 @@
 #include <iostream>
 #include <fstream>
 #include <string>
-#include <map>
+#include <algorithm>
 
 using namespace std;
 
@@ -85,8 +85,16 @@ int main() {
 
 
 void solveFCFS(int n, int arrival[], int burst[], int prio[]) {
+  int sorted_arrival[n];
+  for(int i = 0; i < n; i++) {
+    sorted_arrival[i] = arrival[i];
+  };
+
+  sort(sorted_arrival, sorted_arrival+n);
+
   for (int i = 0; i < n; i++) {
-    cout << arrival[i] << " " << burst[i] << " " << prio[i] << '\n';
+    int index = distance(arrival, find(arrival, arrival + n, sorted_arrival[i]));
+    cout << arrival[index] << " " << index + 1 << " " << burst[index] << "X" << '\n';
   };
 };
 
