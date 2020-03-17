@@ -1,0 +1,1 @@
+g++ CE155_Project1_Cruz_Ordona_code.cpp && ./a.out
